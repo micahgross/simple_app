@@ -1,0 +1,25 @@
+<SimpleAppGrid>
+    record_label: record_label
+    record_switch: record_switch
+    knee_angle_slider: knee_angle_slider
+
+    GridLayout:
+        rows: 2
+        size: root.width, root.height
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                id: record_label
+            Switch:
+                id: record_switch
+                on_touch_down: root.record_capture()
+        BoxLayout:
+            orientation: 'vertical'
+            Slider:
+                id: knee_angle_slider
+                orientation: 'horizontal'
+                max: 180
+                min: 0
+                step: 1
+            Label:
+                text: str(knee_angle_slider.value)+'°'
